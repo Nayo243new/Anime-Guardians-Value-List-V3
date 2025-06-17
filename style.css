@@ -1,0 +1,294 @@
+/* Enhanced Dark Theme Override */
+html, body, #root, .stApp, .stApp > div {
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%) !important;
+    background-size: 400% 400% !important;
+    background-attachment: fixed !important;
+    animation: gradientShift 15s ease infinite !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Improved Container Styling */
+.main, .block-container {
+    background: rgba(255, 255, 255, 0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important; /* Adjusted shadow for better depth */
+    padding: 1rem !important; /* Add some padding inside the container */
+}
+
+/* Enhanced Text Styling */
+h1, h2, h3, h4, h5, h6 {
+    color: white !important;
+    font-weight: 600 !important; /* Make headings bolder */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5) !important; /* Add text shadow for readability */
+}
+
+p, div, span, label {
+    color: rgba(255, 255, 255, 0.8) !important; /* Slightly reduce text opacity for a softer look */
+}
+
+/* Streamlit Theme Overrides - More comprehensive */
+:root {
+    --background-color: #0c0c0c !important;
+    --secondary-background-color: #1a1a2e !important;
+    --text-color: rgba(255, 255, 255, 0.9) !important; /* Adjusted text color */
+    --font: sans-serif !important; /* Specify a default font */
+    --primary-color: #7289da !important; /* Discord's blurple, for a highlight color */
+}
+
+/* Floating Orb Particles */
+.floating-orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(1px);
+    animation: floatOrb 8s infinite ease-in-out;
+}
+
+.orb-1 {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255, 255, 0, 0.6), transparent);
+    top: 10%;
+    left: 20%;
+    animation-duration: 12s;
+}
+
+.orb-2 {
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.5), transparent);
+    top: 60%;
+    right: 15%;
+    animation-duration: 10s;
+}
+
+.orb-3 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 0, 255, 0.4), transparent);
+    bottom: 20%;
+    left: 30%;
+    animation-duration: 15s;
+}
+
+.orb-4 {
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(circle, rgba(255, 165, 0, 0.5), transparent);
+    top: 30%;
+    right: 40%;
+    animation-duration: 9s;
+}
+
+.orb-5 {
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.4), transparent);
+    bottom: 40%;
+    right: 20%;
+    animation-duration: 13s;
+}
+
+@keyframes floatOrb {
+    0%, 100% {
+        transform: translateY(0px) translateX(0px) scale(1);
+        opacity: 0.6;
+    }
+    25% {
+        transform: translateY(-30px) translateX(20px) scale(1.1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-60px) translateX(-15px) scale(0.9);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-20px) translateX(30px) scale(1.05);
+        opacity: 0.7;
+    }
+}
+
+/* Add a subtle glow effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(83, 52, 131, 0.1) 10%, transparent 60%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Back Button Animations */
+@keyframes ripple {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes bounce-back {
+    0%, 20%, 53%, 80%, 100% {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        transform: translate3d(0, 0, 0);
+    }
+    40%, 43% {
+        animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+        transform: translate3d(0, -10px, 0);
+    }
+    70% { transform: translate3d(0, -5px, 0); }
+    90% { transform: translate3d(0, -2px, 0); }
+}
+
+@keyframes slide-in-left {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes morphing {
+    0%, 100% { border-radius: 25px; transform: rotate(0deg); }
+    25% { border-radius: 35px 15px; transform: rotate(5deg); }
+    50% { border-radius: 15px 35px; transform: rotate(-5deg); }
+    75% { border-radius: 30px 20px; transform: rotate(3deg); }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(138, 43, 226, 0.5),
+                    0 0 10px rgba(138, 43, 226, 0.3),
+                    0 0 15px rgba(138, 43, 226, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(138, 43, 226, 0.8),
+                    0 0 20px rgba(138, 43, 226, 0.6),
+                    0 0 30px rgba(138, 43, 226, 0.4);
+    }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Animated Back Button Styles */
+.animated-back-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(75, 0, 130, 0.8));
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: white !important;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slide-in-left 0.6s ease-out;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+}
+
+.animated-back-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, rgba(138, 43, 226, 1), rgba(75, 0, 130, 1));
+    box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+    border-color: rgba(255, 255, 255, 0.4);
+    animation: bounce-back 1s ease infinite;
+}
+
+.animated-back-btn:active {
+    transform: scale(0.95);
+    animation: none;
+}
+
+.animated-back-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.animated-back-btn:active::before {
+    width: 300px;
+    height: 300px;
+    animation: ripple 0.6s ease-out;
+}
+
+.animated-back-btn .back-icon {
+    transition: transform 0.3s ease;
+    font-size: 16px;
+}
+
+.animated-back-btn:hover .back-icon {
+    transform: translateX(-3px);
+}
+
+/* Morphing Button Variant */
+.morphing-back-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(45deg, rgba(255, 105, 180, 0.8), rgba(255, 20, 147, 0.8));
+    border: none;
+    color: white !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    animation: morphing 4s ease-in-out infinite;
+    backdrop-filter: blur(15px);
+    margin-bottom: 20px;
+    border-radius: 25px;
+}
+
+.morphing-back-btn:hover {
+    animation: glow-pulse 1.5s ease-in-out infinite;
+    transform: scale(1.1);
+}
+
+/* Glitch Effect Button */
+.glitch-back-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.8), rgba(255, 0, 255, 0.8));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    color: white !important;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.glitch-back-btn:hover {
+    animation: glitch 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}

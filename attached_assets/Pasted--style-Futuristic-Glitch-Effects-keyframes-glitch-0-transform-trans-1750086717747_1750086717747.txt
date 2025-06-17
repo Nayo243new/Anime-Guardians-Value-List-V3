@@ -1,0 +1,252 @@
+<style>
+    /* Futuristic Glitch Effects */
+    @keyframes glitch {
+        0% { transform: translate(0); }
+        20% { transform: translate(-3px, 3px); text-shadow: 3px 0 #ff0000, -3px 0 #00ffff; }
+        40% { transform: translate(-3px, -3px); text-shadow: -3px 0 #ff0000, 3px 0 #00ffff; }
+        60% { transform: translate(3px, 3px); text-shadow: 3px 0 #00ffff, -3px 0 #ff0000; }
+        80% { transform: translate(3px, -3px); text-shadow: -3px 0 #00ffff, 3px 0 #ff0000; }
+        100% { transform: translate(0); text-shadow: none; }
+    }
+
+    @keyframes cyber-scan {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 100% 100%; }
+    }
+
+    @keyframes matrix-rain {
+        0% { transform: translateY(-100vh); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
+    }
+
+    @keyframes cyber-pulse {
+        0% { 
+            box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, inset 0 0 30px rgba(0, 255, 255, 0.1);
+            border-color: #00ffff;
+        }
+        50% { 
+            box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 60px #00ffff, inset 0 0 50px rgba(0, 255, 255, 0.2);
+            border-color: #66ffff;
+        }
+        100% { 
+            box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, inset 0 0 30px rgba(0, 255, 255, 0.1);
+            border-color: #00ffff;
+        }
+    }
+
+    /* Enhanced background with moving grid */
+    body, .main {
+        background: 
+            linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+            linear-gradient(rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+            radial-gradient(ellipse at 20% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at 80% 80%, rgba(0, 150, 255, 0.08) 0%, transparent 50%),
+            linear-gradient(135deg, #000818 0%, #001428 25%, #000a1f 50%, #001428 75%, #000818 100%);
+        background-size: 60px 60px, 60px 60px, 800px 800px, 600px 600px, 100% 100%;
+        animation: cyber-scan 25s linear infinite;
+        min-height: 100vh;
+    }
+
+    /* Mobile background optimization */
+    @media (max-width: 768px) {
+        body, .main {
+            background-size: 40px 40px, 40px 40px, 400px 400px, 300px 300px, 100% 100%;
+        }
+    }
+
+    /* Main container */
+    .main .block-container {
+        background: 
+            linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(26, 0, 51, 0.9) 50%, rgba(0, 0, 0, 0.9) 100%);
+        border: 3px solid #00ffff;
+        border-radius: 10px;
+        animation: cyber-pulse 3s ease-in-out infinite;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main .block-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 255, 255, 0.03) 2px,
+            rgba(0, 255, 255, 0.03) 4px
+        );
+        animation: cyber-scan 10s linear infinite;
+        pointer-events: none;
+    }
+
+    /* Enhanced glitch buttons */
+    .stButton > button {
+        background: linear-gradient(45deg, #000033 0%, #003366 50%, #000033 100%);
+        border: 2px solid #00ffff;
+        color: #00ffff;
+        font-family: 'Courier New', monospace;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stButton > button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.3), transparent);
+        transition: left 0.5s;
+    }
+
+    .stButton > button:hover {
+        animation: glitch 0.5s ease-in-out infinite;
+        background: linear-gradient(45deg, #003366 0%, #0066cc 50%, #003366 100%);
+        text-shadow: 0 0 15px #00ffff, 2px 0 #ff0000, -2px 0 #00ff00;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        transform: scale(1.05);
+    }
+
+    .stButton > button:hover::before {
+        left: 100%;
+    }
+
+
+/* Sidebar styling */
+.css-1d391kg {
+    background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+    border-right: 2px solid currentColor;
+}
+
+/* Metric styling */
+.metric-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem 0;
+}
+
+/* Text glow effects */
+.glow-text {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+/* Enhanced Card hover effects */
+.character-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 0.8rem 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.character-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.character-card:hover {
+    border-color: currentColor;
+    box-shadow: 
+        0 10px 40px rgba(255, 255, 255, 0.2),
+        0 0 30px currentColor,
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.character-card:hover::before {
+    left: 100%;
+}
+
+/* Enhanced form elements */
+.stSelectbox > div > div {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.stSelectbox > div > div:hover {
+    border-color: currentColor;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* Enhanced metrics */
+.metric-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid currentColor;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px currentColor;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Tier colors with glow */
+.tier-sp { color: #ff6b6b; text-shadow: 0 0 10px #ff6b6b; }
+.tier-s { color: #ff8e53; text-shadow: 0 0 10px #ff8e53; }
+.tier-a-plus { color: #ffd93d; text-shadow: 0 0 10px #ffd93d; }
+.tier-a { color: #6bcf7f; text-shadow: 0 0 10px #6bcf7f; }
+.tier-a-minus { color: #4ecdc4; text-shadow: 0 0 10px #4ecdc4; }
+
+/* Form styling */
+.stTextInput > div > div > input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    color: white;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: currentColor;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Theme-specific particles */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+}
+</style>
